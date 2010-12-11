@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dealer_id: 1
+  address: MyString
+  phone: 
+
+two:
+  dealer_id: 1
+  address: MyString
+  phone: 

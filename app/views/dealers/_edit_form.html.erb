@@ -1,0 +1,54 @@
+<%= form_for(@dealer, :html => { :multipart => true}) do |f| %>
+  <% if @dealer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dealer.errors.count, "error") %> prohibited this dealer from being saved:</h2>
+
+      <ul>
+      <% @dealer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>    
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :image, 'Dealer image' %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <% if @dealer.dealer_location.size > 0 %>
+  
+  <table> 
+    <tr>
+      <th>Address</th>
+      <th>Phone #</th>
+      <th></th>
+    </tr>
+    <% @dealer.dealer_location.each do |dl| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= link_to dl.address, :controller => 'dealer_locations', :action => 'edit', :id => dl.id, :referer => request.env["HTTP_REFERER"], :dealer_id => @dealer.id %></td>
+        <td><%= dl.phone %> </td>
+        <td class="item-actions"><%= link_to 'Remove', dl, :confirm => 'Are you sure?', :controller => 'locations', :method => :delete %></td>
+      </tr> 
+    <% end %>
+  </table>
+  
+  <% else %>
+    <p>No Location(s) Entered</p>
+  <% end %>
+  <div class="actions">
+    <%= f.submit "update" %>
+    <%= f.submit "Add Location" %>
+  </div>
+<% end %>

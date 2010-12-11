@@ -1,0 +1,28 @@
+<%= form_for(@awards_program_category) do |f| %>
+  <% if @awards_program_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@awards_program_category.errors.count, "error") %> prohibited this awards_program_category from being saved:</h2>
+
+      <ul>
+      <% @awards_program_category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :awards_program_class_id, "Class" %><br />
+    <%= 
+      @apc = AwardsProgramClass.all
+      f.collection_select(:awards_program_class_id, @apc, :id, :class_program_name)
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_id: 1
+  report_date: 2010-12-06
+  spawn_planned: false
+  comment: MyText
+
+two:
+  member_id: 1
+  report_date: 2010-12-06
+  spawn_planned: false
+  comment: MyText

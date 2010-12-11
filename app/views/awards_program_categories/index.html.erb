@@ -1,0 +1,24 @@
+<legend>Listing awards_program_categories</legend>
+
+<p><%= link_to 'New Awards program category', new_awards_program_category_path %></p>
+
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @awards_program_categories.each do |apc| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%= apc.awards_program_class.class_program_name %></td>
+    <td><%= apc.name %></td>
+    <td class="item-actions">
+      <%= link_to 'Edit', edit_awards_program_category_path(apc) %> |
+      <%= link_to 'Destroy', apc, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />

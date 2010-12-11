@@ -1,0 +1,25 @@
+<legend>Listing dealer_locations</legend>
+<p><%= link_to 'New Dealer location', new_dealer_location_path %></p>
+<table>
+  <tr>
+    <th>Dealer</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+
+<% @dealer_locations.each do |dealer_location| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%= dealer_location.dealer_id %></td>
+    <td><%= dealer_location.address %></td>
+    <td><%= dealer_location.phone %></td>
+    <td class="item-actions">
+      <%= link_to 'Show', dealer_location %> | 
+      <%= link_to 'Edit', edit_dealer_location_path(dealer_location) %> |
+      <%= link_to 'Destroy', dealer_location, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+

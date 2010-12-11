@@ -1,0 +1,29 @@
+<p>
+  <b>Meeting date:</b>
+  <%= @meeting.meeting_date %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @meeting.event %>
+</p>
+
+<p>
+  <b>Speaker:</b>
+  <%= @meeting.speaker %>
+</p>
+
+<p>
+  <b>Program:</b>
+  <%= raw(@meeting.program) %>
+</p>
+
+<p>
+  <b>Announcement:</b>
+  <%= raw(@meeting.announcement) %>
+</p>
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Destroy', @meeting, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back', meetings_path %>
+
+

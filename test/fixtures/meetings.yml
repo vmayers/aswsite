@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  meeting_date: 2010-10-25
+  event: MyString
+  speaker: MyString
+  program: MyString
+  announcement: MyText
+
+two:
+  meeting_date: 2010-10-25
+  event: MyString
+  speaker: MyString
+  program: MyString
+  announcement: MyText

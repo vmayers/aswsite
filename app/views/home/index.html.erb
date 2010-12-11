@@ -1,0 +1,17 @@
+<div class="body-container">
+
+    <% @notifications.each do |n| %>
+      <div class="post">
+        <% if session[:user_id] %>
+          <%= link_to n.title, n %>
+        <% else %>
+          <%= n.title %>
+        <% end %>
+      </div>
+      <%= raw(n.message) %><br />
+      <br />
+      Created by: <%= n.user.member.name %>
+      
+      <hr />
+    <% end %>
+</div>

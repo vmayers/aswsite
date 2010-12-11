@@ -1,0 +1,21 @@
+<legend>Listing dealers</legend>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @dealers.each do |dealer| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%= image_tag dealer.image.url %>
+    <td><%= link_to dealer.name, dealer %></td>
+    <td><%= link_to 'Destroy', dealer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dealer', new_dealer_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@executive_member) do |f| %>
+  <% if @executive_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@executive_member.errors.count, "error") %> prohibited this executive_member from being saved:</h2>
+
+      <ul>
+      <% @executive_member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :member_id %>
+    <%= 
+      @members = Member.all
+      f.collection_select(:member_id, @members, :id, :name)
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :executive_position_id %>
+    <%= 
+      @ep = ExecutivePosition.all
+      f.collection_select(:executive_position_id, @ep, :id, :position_name)
+    %>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

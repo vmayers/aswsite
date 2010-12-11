@@ -1,0 +1,24 @@
+  <legend>Participant Info</legend> 
+  <% form_tag save_form_bap_index_path, :method => "post" do  %>
+    <%= render( :partial => 'participant_info' )%>
+  </fieldset>
+  <br/>
+  <fieldset> 
+    <legend>Species Info</legend>
+    <%= render( :partial => 'species_info' )%>
+  </fieldset> 
+  <br />
+  <fieldset> 
+    <legend>Spawning Conditions</legend>
+    <%= render( :partial => 'spawning_conditions' )%>
+  </fieldset>
+  <br />
+  <fieldset> 
+    <legend>Comment</legend>
+    <%= text_area_tag(:comment, @member_bap.comment, :size => "80x15") %>
+  </fieldset>
+  <div>
+    <%= submit_tag "Save" %>
+  </div>
+<% end %>
+  

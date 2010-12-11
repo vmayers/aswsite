@@ -1,0 +1,33 @@
+<%= form_for(@librarybook) do |f| %>
+  <% if @librarybook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@librarybook.errors.count, "error") %> prohibited this librarybook from being saved:</h2>
+
+      <ul>
+      <% @librarybook.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br />
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

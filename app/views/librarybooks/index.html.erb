@@ -1,0 +1,30 @@
+
+<legend>Listing Library Books</legend>
+<% if admin_user? %>
+    <p><%= link_to 'New Librarybook', new_librarybook_path %></p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th></th>
+  </tr>
+
+<% @librarybooks.each do |librarybook| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%= link_to librarybook.title, librarybook %></td>
+    <td><%= librarybook.author %></td>
+    <td><%= librarybook.publisher %></td>
+    <% if admin_user? %>
+        <td class="item-actions">
+          <%= link_to 'Edit', edit_librarybook_path(librarybook) %> |
+          <%= link_to 'Destroy', librarybook, :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />

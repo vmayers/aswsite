@@ -1,0 +1,24 @@
+<p>
+  <b>Title:</b>
+  <%= @librarybook.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @librarybook.author %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @librarybook.publisher %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @librarybook.image %>
+</p>
+
+<% if admin_user? %>
+  <%= link_to 'Edit', edit_librarybook_path(@librarybook) %> |
+<% end %>
+<%= link_to 'Back', librarybooks_path %>

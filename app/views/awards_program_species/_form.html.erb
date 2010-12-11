@@ -1,0 +1,39 @@
+<%= form_for(@awards_program_species) do |f| %>
+  <% if @awards_program_species.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@awards_program_species.errors.count, "error") %> prohibited this awards_program_species from being saved:</h2>
+
+      <ul>
+      <% @awards_program_species.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    NOTE: Only a Program or Category can be selected. 
+  </p>
+  <div class="field">
+     <%= f.label :awards_program_id, "Program" %><br />
+     <%= 
+       @program = AwardsProgram.all
+       f.collection_select(:awards_program_id, @program, :id, :acronym, :include_blank => true)
+     %>
+     <strong>OR</strong>
+   </div>
+  
+  <div class="field">
+    <%= f.label :awards_program_category_id, "Category" %><br />
+    <%= 
+      @category = AwardsProgramCategory.all
+      f.collection_select(:awards_program_category_id, @category, :id, :categroy_program_name, :include_blank => true)
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

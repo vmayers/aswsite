@@ -1,0 +1,6 @@
+<legend>Editing: <%= @dealer_location.dealer.name %></legend>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', (@uri || @dealer_location) %> |
+<%= link_to 'Back', (@uri || dealer_locations_path) %>

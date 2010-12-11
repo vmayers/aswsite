@@ -1,0 +1,196 @@
+/* Home Page */
+.upcoming-pane{
+  float:right;
+  width: 400px;
+  padding-left: 1em;
+}
+
+.news-pane{
+  float: left;
+  width: 400px;
+  padding-right: 1em;
+}
+
+.body-container{
+  width: 850px;
+  
+}
+
+.upcoming-pane .news-pane .header{
+  background-color: silver; 
+}
+
+.body-container .post{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Notice */
+#notice {
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller sans-serif; 
+}
+
+/* Styles for forms */
+.asw-form fieldset {
+    background: silver; 
+    width: 90%;
+}
+
+.asw-form fieldset .leftside{
+  float: left;
+  width: 50%;
+}
+
+.asw-form fieldset .rightside{
+  float: right;
+  width: 50%;
+}
+
+.asw-form fieldset .clear{
+  clear: both;
+}
+
+.asw-form fieldset input, select{
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.asw-form legend {
+    color: #dfd;
+    background: black;
+    font-family: sans-serif;
+    padding: 0.2em 1em;
+}
+
+.asw-form label {
+    width: 12em;
+    float: left;
+    text-align: right;
+    padding-top: 0.2em;
+    padding-right: 0.1em;
+    display: block;
+}
+
+.asw_form select, .asw-form textarea, .asw-form input {
+    margin-left: 0.5em
+}
+
+.asw_form .submit {
+	margin-left: 4em;
+}
+
+.asw-form dev {
+	margin: 0.5em;
+}
+
+.asw-form a {
+    color: blue;
+}
+
+/* Model List */
+.asw-form table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.asw-form table tr td{
+    padding: 5px;
+    vertical-align: top;
+}
+
+.asw-form th {
+    text-align: left;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.asw-form .item-description{
+    width: 80%;
+}
+
+.asw-form .item-actions {
+    font-size: x-small;
+    text-align: left;
+    padding-right: 1em;
+    color: blue;
+}
+
+.asw-form .list-line-odd{
+    background: white;
+}
+
+.asw-form .list-line-even{
+    background: silver;
+}
+
+.asw-form ul {
+  display: none;
+}
+
+.medium-container{
+  width: 500px;
+}
+
+/* Banner */
+#banner{
+    background: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	border-bottom: 5px solid;
+	font: small-caps 40px/40px "Times New Roman", serif;
+	color: silver;
+	text-align: center;
+}
+
+#banner img {
+  float: center;
+}
+
+#banner.div {
+  float: left;
+}
+
+#columns {
+  background: black;
+}
+
+#leftsidebar {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: black;
+  border-right: 0px solid;
+  color: white;
+}
+#leftsidebar a{
+  color: white;
+}
+
+#rightsidebar {
+  float: right;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: black;
+  border-left: 0px solid;
+  color: black;
+}
+
+
+#main {
+  margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#aswsite {
+  background: silver; 
+}
+

@@ -1,0 +1,18 @@
+<p>
+  <b>Position name:</b>
+  <%= @executive_position.position_name %>
+</p>
+
+<p>
+  <b>Voting position:</b>
+  <%= @executive_position.voting_position %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @executive_position.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_executive_position_path(@executive_position) %> |
+<%= link_to 'Back', executive_positions_path %>

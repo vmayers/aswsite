@@ -1,0 +1,29 @@
+<%= form_for(@executive_position) do |f| %>
+  <% if @executive_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@executive_position.errors.count, "error") %> prohibited this executive_position from being saved:</h2>
+
+      <ul>
+      <% @executive_position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :position_name %><br />
+    <%= f.text_field :position_name %>
+  </div>
+  <div class="field">
+    <%= f.label :voting_position %><br />
+    <%= f.check_box :voting_position %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

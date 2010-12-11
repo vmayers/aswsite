@@ -1,0 +1,30 @@
+<%= form_for(@user) do |f| %>
+  <%= render "shared/error_messages", :target => @user%>
+  
+  <div class="field">
+    <%= f.label :member_id %><%= mark_required(@user, :member_id) %><br />
+    <%= 
+      @members = Member.order("name")
+      f.collection_select(:member_id, @members, :id, :name)
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :login_name %><%= mark_required(@user, :login_name) %><br />
+    <%= f.text_field :login_name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_password, 'Password' %><%= mark_required(@user, :password) %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :user_password_confirmed, 'Confirm Password' %><%= mark_required(@user, :password_confirmation) %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.check_box :administrator %> <%= mark_required(@user, :administrator) %>
+    <%= f.label :administrator %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

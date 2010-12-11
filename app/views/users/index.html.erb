@@ -1,0 +1,23 @@
+<legend>Listing users</legend>
+<p><%= link_to 'New User', new_user_path %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Action</th>
+    <th></th>
+  </tr>
+
+<% for user in @users %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>"
+    <td class="item-description"><%= user.member.name %></td>
+    <td class="item-actions">
+      <%= link_to 'Show', user %> |
+      <%= link_to 'Edit', edit_user_path(user) %> |
+      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+
+

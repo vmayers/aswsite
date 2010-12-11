@@ -1,0 +1,41 @@
+<legend>Listing meetings</legend>
+<% if session[:user_id] %>
+<%= link_to 'New Meeting', new_meeting_path %><br /><br />
+<% end %>
+
+<div id='heading'>
+  <p>
+  General meetings are on the third Sunday of the month, and are held at <strong>Theatre 100, St. Paul's College, University of Manitoba, 70 Dysart Road</strong>. Meetings start at <strong>1:00 p.m</strong>. (doors open at 12:15 p.m).
+  </p>
+  <p>
+  Enter by the front doors, turn right and follow the stairs down. Theatre 100 is down the hall and to the right. There is plenty of free parking in front of the building or across the street.
+  </p>
+</div>
+<table>
+  <tr>
+    <th>Meeting date</th>
+    <th >Event</th>
+    <th>Speaker</th>
+    <th>Program</th>
+  </tr>
+  <% if session[:user_id] %>
+    <%  @meetings.orderdesc.each do |meeting| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>"
+        <td><%= link_to meeting.meeting_date, meeting %></td>
+        <td><%= meeting.event %></td>
+        <td><%= meeting.speaker %></td>
+        <td><%= raw(meeting.program) %></td>         
+      </tr>
+    <% end %>
+  <% else %>
+    <%  @meetings.upcoming.each do |meeting| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= meeting.meeting_date %></td>
+        <td><%= meeting.event %></td>
+        <td><%= meeting.speaker %></td>
+        <td><%= raw(meeting.program) %></td>         
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+

@@ -1,0 +1,45 @@
+<div class="leftside">  
+  <div>
+    <label>Aquarium Size (inches):</label>
+    <%= text_field_tag :aquarium_length, @bap_spawning_condition.aquarium_length, :size => 4 %>&nbsp;L
+    <%= text_field_tag :aquarium_width, @bap_spawning_condition.aquarium_width, :size => 4 %>&nbsp;W
+    <%= text_field_tag :aquarium_height, @bap_spawning_condition.aquarium_height, :size => 4 %>&nbsp;H
+  </div>
+  <div>
+    <label for="temperature">Temperature:</label>
+    <%= text_field_tag :temperature, @bap_spawning_condition.temperature %>
+  </div>
+  <div>
+    <label for="lighting_type">Lighting Type:</label>
+    <%= text_field_tag(:lighting_type, @bap_spawning_condition.lighting_type) %>
+  </div>
+  <div>
+    <label for="spawn_planned">Spawning Planned?:</label>
+    <%= check_box_tag :spawn_planned, true %> &nbsp; if YES please describe in the comment box    
+  </div>
+
+
+</div>
+
+<div class="rightside">
+  <div>
+   pH &nbsp;<%= text_field_tag(:ph, @bap_spawning_condition.ph, :size => 4) %>
+    DH &nbsp;<%= text_field_tag(:dh, @bap_spawning_condition.dh, :size => 4) %>
+  </div>
+
+  <div>
+    <label for="filter_type">Type of Filter:</label>
+    <%= text_field_tag :filter_type, @bap_spawning_condition.filter_type %>    
+  </div>
+</div>
+<div class="clear"></div>
+<hr />
+<div>
+  <label for="food_for_parents" size="30">Food Used for Conditioning Parents:</label>
+  <%= text_field_tag :food_for_parents, @bap_spawning_condition.food_for_parents, :size => 45 %>
+</div>
+
+<div>
+  <label for="food_for_fry">Food Used for Fry:</label>
+  <%= text_field_tag :food_for_fry, @bap_spawning_condition.food_for_fry, :size => 45 %>
+</div>

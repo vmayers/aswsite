@@ -1,0 +1,2 @@
+module DealerLocationsHelper
+end

@@ -1,0 +1,24 @@
+<legend>Listing executive_members</legend>
+<p><%= link_to 'New Executive member', new_executive_member_path %></p>
+<table>
+  <tr>
+    <th>User name</th>
+    <th>Executive Position</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @executive_members.each do |em| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <td><%= em.member.name %> </td>
+    <td><%= em.executive_position.position_name %></td>
+    <td></td>
+    <td>
+      <%= link_to 'Edit', edit_executive_member_path(em) %> |
+      <%= link_to 'Destroy', em, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+

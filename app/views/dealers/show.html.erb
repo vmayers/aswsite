@@ -1,0 +1,29 @@
+<legend><%= @dealer.name %></legend>
+<p>
+  <%= image_tag @dealer.image.url %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @dealer.email %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @dealer.notes %>
+</p>
+<table> 
+  <tr>
+    <th>Address</th>
+    <th>Phone #</th>
+  </tr>
+  <% @dealer.dealer_location.each do |dl| %>
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+      <td><%= dl.address %></td>
+      <td><%= dl.phone %> </td>
+    </tr> 
+  <% end %>
+</table>
+<p>
+  <%= link_to 'Edit', edit_dealer_path(@dealer) %> |
+  <%= link_to 'Back', dealers_path %>
+</p>

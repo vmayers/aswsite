@@ -1,0 +1,19 @@
+<p>
+  <b>Notification type:</b>
+  <%= @notification.notification_type.name %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= raw(@notification.message) %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @notification.user.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_notification_path(@notification) %> |
+<%= link_to 'Back', notifications_path %>
+

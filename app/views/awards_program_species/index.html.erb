@@ -1,0 +1,33 @@
+<legend>Listing Awards Program Species</legend>
+<p><%= link_to 'New Awards program species', new_awards_program_species_path %></p>
+<table>
+  <tr>
+    <th>Program</th>
+    <th>Category</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @awards_program_species.each do |awards_program_species| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    <% if awards_program_species.awards_program %>
+      <td><%= awards_program_species.awards_program.acronym %>
+    <% else %>
+      <td></td>
+    <%end %>
+    <% if awards_program_species.awards_program_category %>
+      <td><%= awards_program_species.awards_program_category.categroy_program_name %></td>
+    <% else %>
+      <td></td>
+    <% end %>
+    <td><%= awards_program_species.name %></td>
+    <td class="item-actions">
+      <%= link_to 'Edit', edit_awards_program_species_path(awards_program_species) %> |
+      <%= link_to 'Destroy', awards_program_species, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+
+

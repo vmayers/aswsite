@@ -1,0 +1,2 @@
+module AwardsProgramCategoriesHelper
+end
