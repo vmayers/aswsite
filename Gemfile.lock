@@ -44,6 +44,7 @@ GEM
     paperclip (2.3.4)
       activerecord
       activesupport
+    pdfkit (0.4.6)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -78,5 +79,6 @@ DEPENDENCIES
   awesome_print
   mysql (= 2.8.1)
   paperclip (= 2.3.4)
+  pdfkit
   rails (= 3.0.0)
   simple-navigation

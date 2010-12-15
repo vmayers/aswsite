@@ -1,24 +1,25 @@
   <legend>Participant Info</legend> 
-  <% form_tag save_form_bap_index_path, :method => "post" do  %>
-    <%= render( :partial => 'participant_info' )%>
+  <% form_for @member_bap_form, :url => save_form_bap_index_path(@member_bap), :method => "post" do |f|  %>
+  	<%= render( :partial => 'participant_info', :locals => {:member => @member_bap_form.member} ) %>
   </fieldset>
   <br/>
   <fieldset> 
-    <legend>Species Info</legend>
-    <%= render( :partial => 'species_info' )%>
-  </fieldset> 
-  <br />
-  <fieldset> 
-    <legend>Spawning Conditions</legend>
-    <%= render( :partial => 'spawning_conditions' )%>
-  </fieldset>
-  <br />
-  <fieldset> 
-    <legend>Comment</legend>
-    <%= text_area_tag(:comment, @member_bap.comment, :size => "80x15") %>
-  </fieldset>
-  <div>
-    <%= submit_tag "Save" %>
+	  <legend>Species Info</legend>
+  		<%= render( :partial => 'species_info', :locals => {:f => f} ) %>
+	</fieldset> 
+	<br />
+	<fieldset> 
+	  <legend>Spawning Conditions</legend>
+	  
+	</fieldset>
+	<br />
+	<fieldset> 
+	  <legend>Comment</legend>
+	  <%= f.text_area(:comment, :size => "80x15") %>
+	</fieldset>
+	
+  <div id = "print_display_none">
+    <%= submit_tag "Save" %> | <%= link_to "PDF", form_bap_index_path(:format => "pdf") %>
   </div>
 <% end %>
   

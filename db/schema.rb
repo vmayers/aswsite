@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101206133436) do
+ActiveRecord::Schema.define(:version => 20101215005234) do
 
   create_table "awards_program_categories", :force => true do |t|
     t.integer  "awards_program_class_id", :null => false
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20101206133436) do
     t.date     "date_of_hatch"
     t.integer  "number_of_eggs"
     t.integer  "number_of_fry"
-    t.string   "publication_sited"
+    t.string   "publication_cited"
     t.string   "obtained_from"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -125,6 +125,37 @@ ActiveRecord::Schema.define(:version => 20101206133436) do
     t.string   "speaker"
     t.text     "program"
     t.text     "announcement"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_bap_forms", :force => true do |t|
+    t.integer  "member_id"
+    t.date     "report_date"
+    t.boolean  "spawn_planned",                                    :default => false
+    t.text     "comment"
+    t.integer  "member_bap_id"
+    t.string   "latin_name"
+    t.string   "common_name"
+    t.date     "date_of_spawn"
+    t.string   "spawn_site"
+    t.string   "spawn_type"
+    t.date     "date_of_hatch"
+    t.integer  "number_of_eggs"
+    t.integer  "number_of_fry"
+    t.string   "publication_cited"
+    t.string   "obtained_from"
+    t.integer  "aquarium_length"
+    t.integer  "aquarium_width"
+    t.integer  "aquarium_height"
+    t.integer  "temperature"
+    t.string   "lighting_type"
+    t.integer  "lighting_watts"
+    t.decimal  "ph",                :precision => 10, :scale => 0
+    t.decimal  "dh",                :precision => 10, :scale => 0
+    t.string   "filter_type"
+    t.string   "food_for_parents"
+    t.string   "food_for_fry"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

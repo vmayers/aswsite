@@ -1,0 +1,35 @@
+.asw-form fieldset {
+  width: 100%;
+}
+
+.asw-form fieldset input, select {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.asw-form label {
+    width: 12em;
+    float: left;
+    text-align: right;
+    padding-top: 0.2em;
+    padding-right: 0.1em;
+    display: block;
+}
+
+.asw-form fieldset .leftside {
+  float: left;
+  width: 50%;
+}
+
+.asw-form fieldset .rightside {
+  float: right;
+  width: 50%;
+}
+
+.asw-form fieldset .clear {
+  clear: both;
+}
+
+#print_display_none{
+	display :none; 
+}

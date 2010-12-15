@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>The Aquarium Society of Winnipeg</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "asw", :media => "screen" %>
+  <%= stylesheet_link_tag "scaffold", :media => "screen" %>
+  <%= stylesheet_link_tag "asw_print", :media => "print" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
@@ -11,42 +13,43 @@
     <%= image_tag("aswbanner.jpg")%>
   </div>  
   <div id="columns">
-    <div id="leftsidebar"> 
-      <dl>
-        <dt><%= link_to "Home", {:controller => 'home', :action => 'index' } %></dt>
-        <dt><%= link_to "Meeting Information", {:controller => 'meetings', :action => 'index'} %></dt>
-        <dt><%= link_to "Library Books", {:controller => 'librarybooks', :action => 'index'} %>
-        <dt><%= link_to "BAP", {:controller => 'bap', :action => 'index' } %></dt>
-          <dd>Form</dd>
-          <dd>Species List</dd>
-        <dt><a href="http://www..../faq">HAP</a></dt>
-        <dt><%= link_to "Newsletters", {:controller => 'newsletters', :action => 'index'} %></dt>
-        <dt><a href="http://www..../faq">Membership</a></dt>
-        <dt><%= link_to "Dealers", {:controller => 'dealers', :action => 'index'} %></dt>
-        <dt><a href="http://www..../faq">About</a></dt>
-        <dt><a href="http://www..../faq">Contact</a></dt>
-        <dt> &nbsp; </dt>
-        <% if !session[:user_id] %>
-        <dt><%= link_to "Login", :controller => 'admin', :action => 'login' %></dt>
-        <% end %>
-        <% if session[:user_id] %>
-          <dt>Awards Program</dt>
-            <dd><%= link_to "Categories", {:controller => 'awards_program_categories', :action => 'index'}%></dd>
-            <dd><%= link_to "Classes", {:controller => 'awards_program_classes', :action => 'index'}%></dd>
-            <dd><%= link_to "Species", {:controller => 'awards_program_species', :action => 'index'}%></dd>
-          <dt><%= link_to "Executive Members", {:controller => 'executive_members', :action => 'index'}%></dt>
-          <dt><%= link_to "Executive Positions", {:controller => 'executive_positions', :action => 'index'}%></dt>
-          <dt><%= link_to "Members", {:controller => 'members', :action => 'index'}%></dt>
-          <dt><%= link_to "Notifications", {:controller => 'notifications', :action => 'index'}%></dt>
-          <dt><%= link_to "Users", {:controller => 'users', :action => 'index'} %></dt>
-          <dt><%= link_to "Logout", {:controller => 'admin', :action => 'logout'}%></dt>
-        <% end %>
-      </dl>
-      <br />
-      
-    </div>
+  	<div id="print_display_none""
+		  <div id="leftsidebar"> 
+		    <dl>
+		      <dt><%= link_to "Home", {:controller => 'home', :action => 'index' } %></dt>
+		      <dt><%= link_to "Meeting Information", {:controller => 'meetings', :action => 'index'} %></dt>
+		      <dt><%= link_to "Library Books", {:controller => 'librarybooks', :action => 'index'} %>
+		      <dt><%= link_to "BAP", {:controller => 'bap', :action => 'index' } %></dt>
+		        <dd><%= link_to "Form", form_bap_index_path %></dd>
+		        <dd>Species List</dd>
+		      <dt><a href="http://www..../faq">HAP</a></dt>
+		      <dt><%= link_to "Newsletters", {:controller => 'newsletters', :action => 'index'} %></dt>
+		      <dt><a href="http://www..../faq">Membership</a></dt>
+		      <dt><%= link_to "Dealers", {:controller => 'dealers', :action => 'index'} %></dt>
+		      <dt><a href="http://www..../faq">About</a></dt>
+		      <dt><a href="http://www..../faq">Contact</a></dt>
+		      <dt> &nbsp; </dt>
+		      <% if !session[:user_id] %>
+		      <dt><%= link_to "Login", :controller => 'admin', :action => 'login' %></dt>
+		      <% end %>
+		      <% if session[:user_id] %>
+		        <dt>Awards Program</dt>
+		          <dd><%= link_to "Categories", {:controller => 'awards_program_categories', :action => 'index'}%></dd>
+		          <dd><%= link_to "Classes", {:controller => 'awards_program_classes', :action => 'index'}%></dd>
+		          <dd><%= link_to "Species", {:controller => 'awards_program_species', :action => 'index'}%></dd>
+		        <dt><%= link_to "Executive Members", {:controller => 'executive_members', :action => 'index'}%></dt>
+		        <dt><%= link_to "Executive Positions", {:controller => 'executive_positions', :action => 'index'}%></dt>
+		        <dt><%= link_to "Members", {:controller => 'members', :action => 'index'}%></dt>
+		        <dt><%= link_to "Notifications", {:controller => 'notifications', :action => 'index'}%></dt>
+		        <dt><%= link_to "Users", {:controller => 'users', :action => 'index'} %></dt>
+		        <dt><%= link_to "Logout", {:controller => 'admin', :action => 'logout'}%></dt>
+		      <% end %>
+		    </dl>
+		    <br />
+		    
+		  </div>
+		</div>
     
-  
     <div id="main">
       <% if flash[:notice] %>
           <div id="notice"><%= flash[:notice] %> </div> 

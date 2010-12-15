@@ -1,57 +1,53 @@
 <div class="leftside">  
   <div>
-    <label for="latin_name">Reported Species (Latin Name):</label>
-    <%= text_field_tag :latin_name, @bap_species.latin_name, :size => 45 %>
+  	<%= f.label :latin_name %>
+    <%= f.text_field :latin_name, :size => 45 %>
   </div>
 
   <div>
-    <label for="spawn_date">Date of Spawn:</label>
-    <%= text_field_tag :spawn_date, @bap_species.date_of_spawn %>
+  	<%= f.label :date_of_spawn %>
+    <%= f.text_field :date_of_spawn %>
   </div>
 
   <div>
-    <label for="date_of_hatch">Date of Hatching or Release:</label>
-    <%= 
-      text_field_tag(:date_of_hatch, @bap_species.date_of_hatch)
-    %>
+  	<%= f.label :date_of_hatch %>
+    <%= f.text_field :date_of_hatch %>
   </div>
 
   <div>
-    <label for="number_of_eggs"># of Eggs:</label>
-    <%= text_field_tag :number_of_eggs, @bap_species.number_of_eggs, :size => 4 %>    
+  	<%= f.label :number_of_eggs %>
+    <%= f.text_field :number_of_eggs, :size => 4 %>   
   </div>
 
   <div>
-    <label for="publication_cited">Publication Cited for Identification:</label>
-    <%= text_field_tag :publication_cited, @bap_species.publication_sited, :size => 45 %>
+  	<%= f.label :publication_cited %>
+    <%= f.text_field :publication_cited, :size => 45 %> 
   </div>
 
   <div>
-    <label for="obtained_from">Parents Obtained From:</label>
-    <%= text_field_tag :obtained_from, @bap_species.obtained_from, :size => 45 %>
+  	<%= f.label :obtained_from %>
+    <%= f.text_field :obtained_from, :size => 45 %>
   </div>
 </div>
 
 <div class="rightside">
   <div>
-    <label for="common_name">Common Name:</label>
-    <%= 
-      text_field_tag(:common_name, @bap_species.common_name, :size => 45)
-    %>
+  	<%= f.label :common_name %>
+    <%= f.text_field :common_name, :size => 45 %>
   </div>
 
   <div>
-    <label for="spawn_site">Spawning Site:</label>
-    <%= text_field_tag :spawn_site, @bap_species.spawn_site %>    
+  	<%= f.label :spawn_site %>
+    <%= f.text_field :spawn_site %>   
   </div>
 
   <div>
-    <label for="spawn_type">Spawning Type:</label>
-    <%= text_field_tag :spawn_type, @bap_species.spawn_type %>
+  	<%= f.label :spawn_type %>
+    <%= f.text_field :spawn_type %>
   </div>
 
   <div>
-    <label for="number_of_fry"># of Fry:</label>
-    <%= text_field_tag :number_of_fry, @bap_species.number_of_fry, :size => 4 %>
+  	<%= f.label :number_of_fry %>
+    <%= f.text_field :number_of_fry, :size => 4 %>
   </div>
 </div>

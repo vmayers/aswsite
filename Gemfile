@@ -11,6 +11,7 @@ gem 'mysql', '2.8.1'
 gem 'paperclip', '2.3.4'
 gem 'simple-navigation', :require => 'simple-navigation'
 gem 'awesome_print', :require => 'ap'
+gem 'pdfkit'
 
 # Use unicorn as the web server
 # gem 'unicorn'
