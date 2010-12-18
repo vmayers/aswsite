@@ -1,0 +1,41 @@
+<div class="leftside">
+  <div>
+    <label for="name">Member Name:</label>
+    <%= text_field_tag :name, member.name, :size => 45 %>
+  </div>
+
+  <div>
+    <label for="address">Address:</label>
+    <%= text_field_tag :address, member.address, :size => 45 %>
+  </div>
+
+  <div>
+    <label for="city">City:</label>
+    <%= text_field_tag :city, member.city.nil? ? "Winnipeg" : member.city %>
+  </div>
+
+  <div>
+    <label for="province">Province:</label>
+    <%= 
+      @province = Province.all
+      collection_select(:province_id, member.province_id.nil? ? @province.reject {|p| p.name != "Manitoba"}.first.id : member.province_id, @province, :id, :name)
+    %>
+  </div>
+
+  <div>
+    <label for="postal_code">Postal Code:</label>
+    <%= text_field_tag :postal_code, member.postal_code, :size => 7 %>    
+  </div>
+</div>
+
+<div class="rightside">
+  <div>
+    <label for="phone_number">Phone Number:</label>
+    <%= text_field_tag :phone_number, member.phone_number %>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <%= text_field_tag :email, member.email %>
+  </div>
+</div>
