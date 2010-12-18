@@ -11,9 +11,9 @@ development:
   reconnect: false
   database: asw_development
   pool: 5
-  username: root
-  password: malawi12
-  socket: /var/run/mysqld/mysqld.sock
+  username: 
+  password: 
+  socket: 
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -25,9 +25,9 @@ test:
   reconnect: false
   database: asw_test
   pool: 5
-  username: root
-  password: malawi12
-  socket: /var/run/mysqld/mysqld.sock
+  username: 
+  password: 
+  socket: 
   host: localhost
   
 production:
@@ -36,7 +36,7 @@ production:
   reconnect: false
   database: asw_production
   pool: 5
-  username: root
-  password: malawi12
-  socket: /var/run/mysqld/mysqld.sock
+  username: 
+  password: 
+  socket: 
   host: localhost
