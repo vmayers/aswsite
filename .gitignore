@@ -3,3 +3,4 @@ db/schema.rb
 log/**/*.log
 log/*.log*
 config/database.yml
+.bundle
