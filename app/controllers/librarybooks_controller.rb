@@ -4,7 +4,7 @@ class LibrarybooksController < ApplicationController
   # GET /librarybooks
   # GET /librarybooks.xml
   def index
-    @librarybooks = Librarybook.all
+    @librarybooks = Librarybook.search(params[:search]).all.paginate(:per_page => 20, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

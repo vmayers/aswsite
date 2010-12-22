@@ -6,6 +6,7 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql', '2.8.1'
+gem 'will_paginate', '3.0.pre2'
 
 #gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'paperclip', '2.3.4'
