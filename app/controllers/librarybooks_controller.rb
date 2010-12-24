@@ -3,8 +3,9 @@ class LibrarybooksController < ApplicationController
   
   # GET /librarybooks
   # GET /librarybooks.xml
+  helper_method :sort_column, :sort_direction
   def index
-    @librarybooks = Librarybook.search(params[:search]).all.paginate(:per_page => 20, :page => params[:page])
+    @librarybooks = Librarybook.order(sort_column + " " + sort_direction).search(params[:search]).all.paginate(:per_page => 20, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,5 +82,15 @@ class LibrarybooksController < ApplicationController
       format.html { redirect_to(librarybooks_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Librarybook.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
