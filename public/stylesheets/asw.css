@@ -107,6 +107,21 @@
     font-weight: bold;
     text-decoration: underline;
 }
+
+.asw-form th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.asw-form th .asc{
+  background-image: url(/images/up.jpg);
+}
+
+.asw-form th .desc{
+  background-image: url(/images/down.png);
+}
+
 .asw-form .item-description{
     width: 80%;
 }
