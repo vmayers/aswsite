@@ -9,9 +9,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="banner">
-    <%= image_tag("aswbanner.jpg")%>
-  </div>  
+  <div id = "print_display_none">
+    <div id="banner">
+      <%= image_tag("aswbanner.jpg")%>
+    </div>  
+  </div>
   <div id="columns">
   	<div id="print_display_none""
 		  <div id="leftsidebar"> 
@@ -54,11 +56,8 @@
       <% if flash[:notice] %>
           <div id="notice"><%= flash[:notice] %> </div> 
       <% end %>
-      
-      <div class='asw-form'>
-        <fieldset>
-          <%= yield :layout %>
-        </fieldset>
+      <div class='asw-form'>        
+        <%= yield :layout %>        
       </div>
     </div>
   </div>

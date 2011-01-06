@@ -209,3 +209,6 @@
   background: silver; 
 }
 
+#print_display_only{
+	display :none; 
+}

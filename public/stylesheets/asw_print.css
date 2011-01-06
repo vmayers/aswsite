@@ -1,17 +1,23 @@
+h1 {
+  
+}
+
 .asw-form fieldset {
-  width: 100%;
+  width: 200%;
+  font-size: 12px;
 }
 
 .asw-form fieldset input, select {
   margin-top: 9px;
   margin-bottom: 9px;
+  height: 18px;
 }
 
 .asw-form label {
     width: 12em;
     float: left;
     text-align: right;
-    padding-top: 0.2em;
+    padding-top: 0.8em;
     padding-right: 0.1em;
     display: block;
 }
