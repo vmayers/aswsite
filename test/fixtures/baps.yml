@@ -1,0 +1,59 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_id: 1
+  report_date: 2011-01-08
+  spawn_planned: false
+  comment: MyText
+  member_bap_id: 1
+  latin_name: MyString
+  common_name: MyString
+  date_of_spawn: 2011-01-08
+  spawn_site: MyString
+  spawn_type: MyString
+  date_of_hatch: 2011-01-08
+  number_of_eggs: 1
+  number_of_fry: 1
+  publication_cited: MyString
+  obtained_from: MyString
+  member_bap_id: 1
+  aquarium_length: 1
+  aquarium_width: 1
+  aquarium_height: 1
+  temperature: 1
+  lighting_type: MyString
+  lighting_watts: 1
+  ph: 9.99
+  dh: 9.99
+  filter_type: MyString
+  food_for_parents: MyString
+  food_for_fry: MyString
+
+two:
+  member_id: 1
+  report_date: 2011-01-08
+  spawn_planned: false
+  comment: MyText
+  member_bap_id: 1
+  latin_name: MyString
+  common_name: MyString
+  date_of_spawn: 2011-01-08
+  spawn_site: MyString
+  spawn_type: MyString
+  date_of_hatch: 2011-01-08
+  number_of_eggs: 1
+  number_of_fry: 1
+  publication_cited: MyString
+  obtained_from: MyString
+  member_bap_id: 1
+  aquarium_length: 1
+  aquarium_width: 1
+  aquarium_height: 1
+  temperature: 1
+  lighting_type: MyString
+  lighting_watts: 1
+  ph: 9.99
+  dh: 9.99
+  filter_type: MyString
+  food_for_parents: MyString
+  food_for_fry: MyString

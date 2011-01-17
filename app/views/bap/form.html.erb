@@ -25,9 +25,9 @@
   	</fieldset>
 	
     <div id = "print_display_none">
-      <% if session[:user_id] %>
+      
         <%= submit_tag "Save" %> | 
-      <% end %>
+      
       <%= link_to "Generate PDF", form_bap_index_path(:format => "pdf") %>
     </div>
   <% end %>

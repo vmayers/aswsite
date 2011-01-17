@@ -8,6 +8,6 @@ class Member < ActiveRecord::Base
   #accepts_nested_attributes_for :member_bap_forms
   
   validates :name, :presence => true
-  validates :email, :email => true
+  validates :email, :email => true, :uniqueness => true
   validates :phone_number, :phone_number => true
 end

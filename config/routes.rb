@@ -2,6 +2,16 @@ Aswsite::Application.routes.draw do
   
  
 
+  resources :baps do
+    collection do
+      get :overview
+      get :offline_form
+      post :offline_form
+      get :administration
+      post :administration
+    end
+  end
+
   resources :members
   resources :awards_program_species
   resources :awards_program_categories
@@ -9,12 +19,6 @@ Aswsite::Application.routes.draw do
 
   root :to => "home#index"
   resources :notifications
-  resources :bap do
-    collection do
-      get :form
-      post :save_form
-    end 
-  end
   resources :meetings
 
   get "newsletter/index"

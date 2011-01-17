@@ -21,8 +21,12 @@
 		      <dt><%= link_to "Home", {:controller => 'home', :action => 'index' } %></dt>
 		      <dt><%= link_to "Meeting Information", {:controller => 'meetings', :action => 'index'} %></dt>
 		      <dt><%= link_to "Library Books", {:controller => 'librarybooks', :action => 'index'} %>
-		      <dt><%= link_to "BAP", {:controller => 'bap', :action => 'index' } %></dt>
-		        <dd><%= link_to "Form", form_bap_index_path %></dd>
+		      <dt><%= link_to "BAP", overview_baps_path %></dt>
+		        <% if session[:user_id] %>
+		          <dd><%= link_to "My Baps", baps_path %></dd>
+		        <% else %>
+		          <dd><%= link_to "Form", offline_form_baps_path %></dd>
+		        <% end %>
 		        <dd>Species List</dd>
 		      <dt><a href="http://www..../faq">HAP</a></dt>
 		      <dt><%= link_to "Newsletters", {:controller => 'newsletters', :action => 'index'} %></dt>

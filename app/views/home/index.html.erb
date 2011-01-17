@@ -1,3 +1,4 @@
+<%= will_paginate @notifications %>
 <fieldset>
 <div class="body-container">
 
@@ -11,9 +12,11 @@
       </div>
       <%= raw(n.message) %><br />
       <br />
-      Created by: <%= n.user.member.name %>
+      Created by: <%= n.user.member.executive_member.executive_position.position_name %>
       
       <hr />
     <% end %>
+    
 </div>
 </fieldset>
+<%= will_paginate @notifications %>

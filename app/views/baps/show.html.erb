@@ -1,0 +1,131 @@
+<% if notice %>  
+  <p id="notice"><%= notice %></p>
+<% end %>
+<%= form_for(@bap) do |f| %>
+  <% if @bap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bap.errors.count, "error") %> prohibited this bap from being saved:</h2>
+
+      <ul>
+      <% @bap.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>Species Info</legend>
+    <div class="leftside"> 
+      <div class="field">
+        <%= f.label :latin_name %>
+        <%= f.text_field :latin_name, :size => 45, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :date_of_spawn %>
+        <%= f.date_select :date_of_spawn, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :date_of_hatch %>
+        <%= f.date_select :date_of_hatch, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :number_of_eggs %>
+        <%= f.text_field :number_of_eggs, :size => 4, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :publication_cited %>
+        <%= f.text_field :publication_cited, :size => 45, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :obtained_from %>
+        <%= f.text_field :obtained_from, :size => 45, :disabled => true %>
+      </div>
+    </div>
+    
+    <div class="rightside"> 
+      <div class="field">
+        <%= f.label :report_date %>
+        <%= f.date_select :report_date, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :common_name %>
+        <%= f.text_field :common_name, :size => 45, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :spawn_site %>
+        <%= f.text_field :spawn_site, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :spawn_type %>
+        <%= f.text_field :spawn_type, :disabled => true %>
+      </div>
+      <div class="field">
+        <%= f.label :number_of_fry %>
+        <%= f.text_field :number_of_fry, :size => 4, :disabled => true %>
+      </div>
+    </div>
+  </fieldset>
+  <br/>
+  <fieldset>
+    <legend>Spawning Conditions</legend>
+    <div class="leftside">
+      <div class="field">
+        <label>Aquarium Size (inches):</label>
+        <%= f.text_field :aquarium_length, :size => 4, :disabled => true %>&nbsp;L
+        <%= f.text_field :aquarium_width, :size => 4, :disabled => true %>&nbsp;W
+        <%= f.text_field :aquarium_height, :size => 4, :disabled => true %>&nbsp;H
+      </div>
+      <div class="field">
+     		<%= f.label :temperature %>	
+     		<%= f.text_field :temperature, :disabled => true %>	
+      </div>
+      <div class="field">
+      	<%= f.label :lighting_type %>	
+     		<%= f.text_field :lighting_type, :disabled => true %>
+     		&nbsp;Watts
+     		<%= f.text_field :lighting_watts, :size => 4, :disabled => true %>
+      </div>
+      <div class="field">
+      	<%= f.label :spawn_planned %>	
+     		<%= f.check_box :spawn_planned, :checked_value => "true", :unchecked_value => "false", :disabled => true %> &nbsp; if YES please describe in the comment box    
+      </div>
+    </div>
+    <div class="rightside">
+      <div class="field">
+        pH &nbsp;<%= f.text_field :ph, :size => 4, :disabled => true %> 
+        DH &nbsp;<%= f.text_field :dh, :size => 4, :disabled => true %> 
+      </div>
+
+      <div class="field">
+      	<%= f.label :filter_type %>	
+     		<%= f.text_field :filter_type, :disabled => true %>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <hr />
+    <div class="field">
+    	<%= f.label :food_for_parents %>	
+     	<%= f.text_field :food_for_parents, :size => 45, :disabled => true %>
+    </div>
+
+    <div class="field">
+    	<%= f.label :food_for_fry %>	
+     	<%= f.text_field :food_for_fry, :size => 45, :disabled => true %>
+    </div>
+   
+    
+  </fieldset>
+  <br />
+  <fieldset>
+    <legend>Comments</legend>
+    <div class="field">
+      <%= f.label :comment %><br />
+      <%= f.text_area :comment, :size => "80x15", :disabled => true %>
+    </div>
+  </fieldset>
+<% end %>
+<div id = "print_display_none">
+  <%= link_to "Generate PDF", bap_path(:format => "pdf") %> |
+  <%= link_to 'Edit', edit_bap_path(@bap) %> |
+  <%= link_to 'Back', baps_path %>
+</div>
