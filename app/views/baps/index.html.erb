@@ -13,7 +13,7 @@
     <td><%= bap.report_date %></td>
     <td><%= bap.latin_name %></td>
     <td><%= bap.common_name %></td>
-    <td><%= link_to 'Show', bap %>&nbsp;|<%= link_to 'Edit', edit_bap_path(bap) %>&nbsp;|<%= link_to 'Destroy', bap, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', bap %>&nbsp; <% if !bap.submitted %>|<%= link_to 'Edit', edit_bap_path(bap) %>&nbsp;|<%= link_to 'Destroy', bap, :confirm => 'Are you sure?', :method => :delete %> <% end %></td>
   </tr>
 <% end %>
 </table>

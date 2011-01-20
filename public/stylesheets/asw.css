@@ -35,6 +35,11 @@
 }
 
 /* Styles for forms */
+.asw-form a { color: #000; }
+.asw-form a:visited { color: #666; }
+.asw-form a:hover { color: #fff; background-color:#000; }
+
+
 .asw-form fieldset {
     background: silver; 
     width: 90%;
@@ -182,9 +187,7 @@
   border-right: 0px solid;
   color: white;
 }
-#leftsidebar a{
-  color: white;
-}
+
 
 #rightsidebar {
   float: right;

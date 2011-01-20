@@ -1,3 +1,11 @@
+<script>
+	$(function() {
+		$( "#bap_date_of_spawn" ).datepicker();
+		$( "#bap_report_date" ).datepicker();
+		$( "#bap_date_of_hatch" ).datepicker();
+	});
+</script>
+
 <%= form_for(@bap) do |f| %>
   <% if @bap.errors.any? %>
     <div id="error_explanation">
@@ -19,11 +27,11 @@
       </div>
       <div class="field">
         <%= f.label :date_of_spawn %>
-        <%= f.date_select :date_of_spawn %>
+        <%= f.text_field :date_of_spawn %>
       </div>
       <div class="field">
         <%= f.label :date_of_hatch %>
-        <%= f.date_select :date_of_hatch %>
+        <%= f.text_field :date_of_hatch %>
       </div>
       <div class="field">
         <%= f.label :number_of_eggs %>
@@ -42,7 +50,7 @@
     <div class="rightside"> 
       <div class="field">
         <%= f.label :report_date %>
-        <%= f.date_select :report_date %>
+        <%= f.text_field :report_date %>
       </div>
       <div class="field">
         <%= f.label :common_name %>
@@ -118,6 +126,10 @@
     <div class="field">
       <%= f.label :comment %><br />
       <%= f.text_area :comment, :size => "80x15" %>
+    </div>
+    <div class="field">
+      <%= f.label :submitted %>
+      <%= f.check_box :submitted, :checked_value => "true", :unchecked_value => "false" %>
     </div>
   </fieldset>
   <div class="actions">
