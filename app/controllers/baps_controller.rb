@@ -91,7 +91,13 @@ class BapsController < ApplicationController
   def offline_form
   end
   
-  def administration
-    
+  def verify
+    @baps = Bap.where("submitted = true and verified_date IS NULL")
+    @verify = true
+
+    respond_to do |format|
+      format.html # verify.html.erb
+      format.xml  { render :xml => @baps }
+    end    
   end
 end

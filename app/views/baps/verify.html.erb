@@ -1,0 +1,23 @@
+<h1>Listing baps</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Report Date</th>
+    <th>Latin Name</th>
+    <th>Common Name</th>
+    <th></th>
+  </tr>
+
+<% @baps.each do |bap| %>
+  <tr>
+    <td><%= bap.member.name %></td>
+    <td><%= bap.report_date %></td>
+    <td><%= bap.latin_name %></td>
+    <td><%= bap.common_name %></td>
+    <td><%= link_to 'Show', bap %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

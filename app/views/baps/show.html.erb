@@ -121,8 +121,9 @@
     </div>
   </fieldset>
 <% end %>
-<div id = "print_display_none">
-  <%= link_to "Generate PDF", bap_path(:format => "pdf") %> |
-  <%= link_to 'Edit', edit_bap_path(@bap) %> |
-  <%= link_to 'Back', baps_path %>
-</div>
+  <div id = "print_display_none">
+    <%= link_to "Generate PDF", bap_path(:format => "pdf") %> |
+    <%= link_to 'Edit', edit_bap_path(@bap) %> |
+    <%= link_to 'Back', baps_path %>
+  </div>
+
