@@ -1,14 +1,11 @@
 Aswsite::Application.routes.draw do
-  
- 
-
   resources :baps do
     collection do
       get :overview
       get :offline_form
       post :offline_form
-      get :administration
-      post :administration
+      get :verify
+      post :verify
     end
   end
 
@@ -20,6 +17,11 @@ Aswsite::Application.routes.draw do
   root :to => "home#index"
   resources :notifications
   resources :meetings
+  resources :home do
+    collection do
+      get :contacts
+    end
+  end
 
   get "newsletter/index"
 
