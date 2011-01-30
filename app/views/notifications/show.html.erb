@@ -10,7 +10,11 @@
 
 <p>
   <b>Created by:</b>
-  <%= @notification.user.member.name %>
+  <% if @notification.user.member %>
+    <%= @notification.user.member.name %>
+  <% else %>
+    Administration
+  <% end %>
 </p>
 
 

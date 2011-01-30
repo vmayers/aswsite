@@ -1,22 +1,24 @@
-<h1>Listing baps</h1>
+<fieldset>
+  <legend>Listing baps</legend>
 
-<table>
-  <tr>
-    <th>Report Date</th>
-    <th>Latin Name</th>
-    <th>Common Name</th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Report Date</th>
+      <th>Latin Name</th>
+      <th>Common Name</th>
+      <th></th>
+    </tr>
 
-<% @baps.each do |bap| %>
-  <tr>
-    <td><%= bap.report_date %></td>
-    <td><%= bap.latin_name %></td>
-    <td><%= bap.common_name %></td>
-    <td><%= link_to 'Show', bap %>&nbsp; <% if !bap.submitted %>|<%= link_to 'Edit', edit_bap_path(bap) %>&nbsp;|<%= link_to 'Destroy', bap, :confirm => 'Are you sure?', :method => :delete %> <% end %></td>
-  </tr>
-<% end %>
-</table>
+  <% @baps.each do |bap| %>
+    <tr>
+      <td><%= bap.report_date %></td>
+      <td><%= bap.latin_name %></td>
+      <td><%= bap.common_name %></td>
+      <td><%= link_to 'Show', bap %>&nbsp; <% if !bap.submitted %>|<%= link_to 'Edit', edit_bap_path(bap) %>&nbsp;|<%= link_to 'Destroy', bap, :confirm => 'Are you sure?', :method => :delete %> <% end %></td>
+    </tr>
+  <% end %>
+  </table>
+</fieldset>
 
 <br />
 

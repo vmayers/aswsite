@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
   validates :login_name, :presence => true, :uniqueness => true
   validates :member_id, :uniqueness => true
 
-  #validates_presence_of :name
-  #validates_uniqueness_of :name
   
   attr_accessor :password_confirmation, :password
   

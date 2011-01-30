@@ -9,6 +9,7 @@ gem 'paperclip', '2.3.4'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'mysql', '2.8.1'
 gem 'will_paginate', '3.0.pre2'
+gem 'heroku'
 
 #gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 

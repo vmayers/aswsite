@@ -1,25 +1,27 @@
-<legend>Listing notifications</legend>
-<p><%= link_to 'New Notification', new_notification_path %></p>
-<table>
-  <tr>
-    <th>Notification Type</th>
-    <th>Title</th>
-    <th>Message</th>
-    <th>Created by</th>
-    <th></th>
-  </tr>
-
-  <% @notifications.each do |notification| %>
-    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-      <td><%= notification.notification_type.name %></td>
-      <td><%= notification.title %></td>
-      <td><%= raw(notification.message) %></td>
-      <td><%= notification.user.member.name %></td>
-      <td class="item-actions">
-        <%= link_to 'Show', notification %> |
-        <%= link_to 'Edit', edit_notification_path(notification) %> |
-        <%= link_to 'Destroy', notification, :confirm => 'Are you sure?', :method => :delete %>
-      </td>
+<fieldset>
+  <legend>Listing notifications</legend>
+  <p><%= link_to 'New Notification', new_notification_path %></p>
+  <table>
+    <tr>
+      <th>Notification Type</th>
+      <th>Title</th>
+      <th>Message</th>
+      <th>Created by</th>
+      <th></th>
     </tr>
-  <% end %>
-</table>
+
+    <% @notifications.each do |notification| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= notification.notification_type.name %></td>
+        <td><%= notification.title %></td>
+        <td><%= raw(notification.message) %></td>
+        <td><%= notification.user.member.name %></td>
+        <td class="item-actions">
+          <%= link_to 'Show', notification %> |
+          <%= link_to 'Edit', edit_notification_path(notification) %> |
+          <%= link_to 'Destroy', notification, :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</fieldset>

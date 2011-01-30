@@ -4,6 +4,7 @@ class AdminController < ApplicationController
       user = User.authenticate(params[:login_name], params[:password])
       if user 
         session[:user_id] = user.id
+        session[:user] = user
         uri = session[:original_uri]
         session[:original_uri] = nil
         

@@ -1,21 +1,23 @@
-<legend>Newsletters</legend>
-<p><%= link_to 'New Newsletter', new_newsletter_path %><p>
-<table>
-  <tr>
-    <th>Title</th>
-    <% if session[:user_id] %>
-      <th></th>
-      <th></th>
-    <% end %>
-  </tr>
-
-  <% @newsletters.each do |newsletter| %>
-    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>"
-      <td class="item-description" ><%= link_to newsletter.title, newsletter.pdf.url %></td>
-        <% if session[:user_id] %>
-        <td class="item-actions"><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
-        <td class="item-actions"><%= link_to 'Destroy', newsletter, :confirm => 'Are you sure?', :method => :delete %></td>
+<fieldset>
+  <legend>Newsletters</legend>
+  <p><%= link_to 'New Newsletter', new_newsletter_path %><p>
+  <table>
+    <tr>
+      <th>Title</th>
+      <% if session[:user_id] %>
+        <th></th>
+        <th></th>
       <% end %>
     </tr>
-  <% end %>
-</table>
+
+    <% @newsletters.each do |newsletter| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>"
+        <td class="item-description" ><%= link_to newsletter.title, newsletter.pdf.url %></td>
+          <% if session[:user_id] %>
+          <td class="item-actions"><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
+          <td class="item-actions"><%= link_to 'Destroy', newsletter, :confirm => 'Are you sure?', :method => :delete %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</fieldset>

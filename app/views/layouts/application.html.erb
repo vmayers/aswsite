@@ -76,7 +76,7 @@
             <li><%= link_to "Information", overview_baps_path %></li>
             <li>Species List</li>
             <li>Form</li>
-            <% if session[:user_id] %>
+            <% if session[:user] && session[:user].member %>
               <li><%= link_to "My Baps", baps_path %></li>
             <% end %>
           </ul>

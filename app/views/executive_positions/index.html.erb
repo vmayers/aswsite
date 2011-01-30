@@ -1,25 +1,26 @@
-<legend>Listing executive_positions</legend>
-<p><%= link_to 'New Executive position', new_executive_position_path %></p>
-<table>
-  <tr>
-    <th>Position name</th>
-    <th>Voting position</th>
-    <th>Email</th>
-    <th></th>
-  </tr>
+<fieldset>
+  <legend>Listing executive_positions</legend>
+  <p><%= link_to 'New Executive position', new_executive_position_path %></p>
+  <table>
+    <tr>
+      <th>Position name</th>
+      <th>Voting position</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
 
-<% @executive_positions.each do |executive_position| %>
-  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-    <td><%= executive_position.position_name %></td>
-    <td><%= executive_position.voting_position %></td>
-    <td><%= executive_position.email %></td>
-    <td>
-      <%= link_to 'Show', executive_position %> |
-      <%= link_to 'Edit', edit_executive_position_path(executive_position) %> |
-      <%= link_to 'Destroy', executive_position, :confirm => 'Are you sure?', :method => :delete %>
-    </td>
-  </tr>
-<% end %>
-</table>
-
+  <% @executive_positions.each do |executive_position| %>
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+      <td><%= executive_position.position_name %></td>
+      <td><%= executive_position.voting_position %></td>
+      <td><%= executive_position.email %></td>
+      <td>
+        <%= link_to 'Show', executive_position %> |
+        <%= link_to 'Edit', edit_executive_position_path(executive_position) %> |
+        <%= link_to 'Destroy', executive_position, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</fieldset>
 

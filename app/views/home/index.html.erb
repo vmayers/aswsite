@@ -1,7 +1,6 @@
 <%= will_paginate @notifications %>
 <fieldset>
 <div class="body-container">
-
     <% @notifications.each do |n| %>
       <div class="post">
         <% if session[:user_id] %>
@@ -12,7 +11,12 @@
       </div>
       <%= raw(n.message) %><br />
       <br />
-      Created by: <%= n.user.member.executive_member.executive_position.position_name %>
+      Created by:
+      <% if n.user && n.user.member %>
+         <%= n.user.member.executive_member.executive_position.position_name %>
+      <% else %>
+        Administration
+      <% end %>
       
       <hr />
     <% end %>

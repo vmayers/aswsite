@@ -1,7 +1,8 @@
-<legend>Editing <%= @dealer.name %></legend>
+<fieldset>
+  <legend>Editing <%= @dealer.name %></legend>
 
-<%= if @current_action == 'edit' then render 'edit_form' else render 'form' end %>
-
+  <%= if @current_action == 'edit' then render 'edit_form' else render 'form' end %>
+</fieldset>
 <%= link_to 'Show', @dealer %> |
 <%= link_to 'Back', dealers_path %>
  
