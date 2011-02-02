@@ -80,14 +80,11 @@
               <li><%= link_to "My Baps", baps_path %></li>
             <% end %>
           </ul>
-          <h3 class="menuheader expandable">Hap</h3>
+          <h3 class="menuheader">Hap</h3>
           <ul class="categoryitems">
-            <li><%= #link_to "Overview", overview_haps_path %></li>
+            <li>Overview</li>
             <li>Species List</li>
             <li>Form</li>
-            <% if session[:user] && session[:user].member %>
-              <li><%= link_to "My Haps", haps_path %></li>
-            <% end %>
           </ul>
           <h3 class="menuheader"><%= link_to "Newsletter", newsletters_path %></h3>
           <h3 class="menuheader">Membership</h3>
