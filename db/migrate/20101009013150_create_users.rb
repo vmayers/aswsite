@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :login_name, :null => false
       t.string :hashed_password, :null => false
       t.string :salt, :null => false
-      t.boolean :administrator, :null => false, :default => 0
+      t.boolean :administrator, :null => false, :default => false
 
       t.timestamps
     end
