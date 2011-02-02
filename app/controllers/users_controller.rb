@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = "User #{@user.name} was successfully created"
+        flash[:notice] = "User #{@user.login_name} was successfully created"
         format.html{ redirect_to(:action => 'index')}
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = "User #{@user.member.name} was successfully updated"
+        flash[:notice] = "User #{@user.login_name} was successfully updated"
         format.html{ redirect_to(:action => 'index')}
         format.xml  { head :ok }
       else
