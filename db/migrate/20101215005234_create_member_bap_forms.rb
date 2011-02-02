@@ -3,7 +3,7 @@ class CreateMemberBapForms < ActiveRecord::Migration
     create_table :member_bap_forms do |t|
     	t.integer :member_id
       t.date :report_date
-      t.boolean :spawn_planned, :default => 0
+      t.boolean :spawn_planned, :default => false
       t.text :comment
       t.integer :member_bap_id
       t.string :latin_name
