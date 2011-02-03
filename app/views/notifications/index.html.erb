@@ -15,7 +15,13 @@
         <td><%= notification.notification_type.name %></td>
         <td><%= notification.title %></td>
         <td><%= raw(notification.message) %></td>
-        <td><%= notification.user.member.name %></td>
+        <td>
+          <% if notification.user.member.nil? %>
+            Administration 
+          <% else %>
+            <%= notification.user.member.name %>
+          <% end %>
+        </td>
         <td class="item-actions">
           <%= link_to 'Show', notification %> |
           <%= link_to 'Edit', edit_notification_path(notification) %> |
