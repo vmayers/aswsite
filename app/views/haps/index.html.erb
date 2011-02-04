@@ -1,0 +1,21 @@
+<h1>Listing haps</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @haps.each do |hap| %>
+  <tr>
+    <td><%= link_to 'Show', hap %></td>
+    <td><%= link_to 'Edit', edit_hap_path(hap) %></td>
+    <td><%= link_to 'Destroy', hap, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hap', new_hap_path %>

@@ -146,8 +146,12 @@
     background: silver;
 }
 
-.asw-form ul {
-  display: none;
+//.asw-form ul {
+//  display: none;
+//}
+
+.no-bullets ul li{
+  list-style-type: none;
 }
 
 .medium-container{

@@ -1,4 +1,10 @@
 Aswsite::Application.routes.draw do
+  resources :haps do
+    collection do
+      get :overview
+    end
+  end
+
   resources :baps do
     collection do
       get :overview

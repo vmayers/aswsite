@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101215005234) do
+ActiveRecord::Schema.define(:version => 20110130004859) do
 
   create_table "awards_program_categories", :force => true do |t|
     t.integer  "awards_program_class_id", :null => false
@@ -42,24 +42,11 @@ ActiveRecord::Schema.define(:version => 20101215005234) do
     t.datetime "updated_at"
   end
 
-  create_table "bap_spawning_conditions", :force => true do |t|
-    t.integer  "member_bap_id"
-    t.integer  "aquarium_length"
-    t.integer  "aquarium_width"
-    t.integer  "aquarium_height"
-    t.integer  "temperature"
-    t.string   "lighting_type"
-    t.integer  "lighting_watts"
-    t.decimal  "ph",               :precision => 10, :scale => 0
-    t.decimal  "dh",               :precision => 10, :scale => 0
-    t.string   "filter_type"
-    t.string   "food_for_parents"
-    t.string   "food_for_fry"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bap_species", :force => true do |t|
+  create_table "baps", :force => true do |t|
+    t.integer  "member_id"
+    t.date     "report_date"
+    t.boolean  "spawn_planned"
+    t.text     "comment"
     t.integer  "member_bap_id"
     t.string   "latin_name"
     t.string   "common_name"
@@ -71,8 +58,23 @@ ActiveRecord::Schema.define(:version => 20101215005234) do
     t.integer  "number_of_fry"
     t.string   "publication_cited"
     t.string   "obtained_from"
+    t.integer  "aquarium_length"
+    t.integer  "aquarium_width"
+    t.integer  "aquarium_height"
+    t.integer  "temperature"
+    t.string   "lighting_type"
+    t.integer  "lighting_watts"
+    t.decimal  "ph",                      :precision => 10, :scale => 0
+    t.decimal  "dh",                      :precision => 10, :scale => 0
+    t.string   "filter_type"
+    t.string   "food_for_parents"
+    t.string   "food_for_fry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "submitted"
+    t.string   "verified_by"
+    t.date     "verified_date"
+    t.integer  "awards_program_class_id"
   end
 
   create_table "dealer_locations", :force => true do |t|
@@ -106,6 +108,11 @@ ActiveRecord::Schema.define(:version => 20101215005234) do
     t.string   "position_name",                      :null => false
     t.boolean  "voting_position", :default => false
     t.string   "email",                              :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "haps", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -156,15 +163,6 @@ ActiveRecord::Schema.define(:version => 20101215005234) do
     t.string   "filter_type"
     t.string   "food_for_parents"
     t.string   "food_for_fry"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "member_baps", :force => true do |t|
-    t.integer  "member_id"
-    t.date     "report_date"
-    t.boolean  "spawn_planned", :default => false
-    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -223,7 +221,7 @@ ActiveRecord::Schema.define(:version => 20101215005234) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.integer  "member_id",                          :null => false
+    t.integer  "member_id"
     t.string   "login_name",                         :null => false
     t.string   "hashed_password",                    :null => false
     t.string   "salt",                               :null => false
