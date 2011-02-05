@@ -3,7 +3,7 @@ class Librarybook < ActiveRecord::Base
   def self.search(search)
     if search
       # TODO: Check out sphinx for for search
-      where('title LIKE ?', "%#{search}%")
+      where('LCASE(title) LIKE ?', "%#{search.downcase}%")
     else
       scoped
     end
