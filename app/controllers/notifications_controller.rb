@@ -1,6 +1,10 @@
+
 class NotificationsController < ApplicationController
   # GET /notifications
   # GET /notifications.xml
+  
+  uses_tiny_mce
+  
   def index
    @notifications = Notification.all
 
