@@ -13,6 +13,5 @@ tmp/*
 db/schema.rb
 log/**/*.log
 log/*.log*
-config/*.yml
 public/system/pdfs/**/*
 public/.DS_Store
