@@ -22,7 +22,7 @@
     </tr>
     <% if session[:user_id] %>
       <%  @meetings.orderdesc.each do |meeting| %>
-        <tr class="<%= cycle('list-line-odd', 'list-line-even') %>"
+        <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
           <td><%= link_to meeting.meeting_date, meeting %></td>
           <td><%= meeting.event %></td>
           <td><%= meeting.speaker %></td>

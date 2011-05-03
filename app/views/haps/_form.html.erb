@@ -1,3 +1,8 @@
+<script>
+	$(function() {
+		$( "#hap_report_date" ).datepicker({ dateFormat: 'yy-mm-dd'});
+	});
+</script>
 <%= form_for(@hap) do |f| %>
   <% if @hap.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +15,139 @@
       </ul>
     </div>
   <% end %>
-
+	
+	<fieldset>
+    <legend>Type of Reproduction</legend>
+    <div class="leftside"> 
+      <div class="field">
+				<%= f.label :awards_program_class_id, "Class"%>
+	    	<%= f.collection_select :awards_program_class_id, AwardsProgramClass.all_hap_classes, :id, :classification %>
+      </div>
+		</div>
+		<div class="rightside">
+			<%= f.label :report_date %>
+	    <%= f.text_field :report_date %>
+		</div>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend>Plant Information</legend>
+		<div class="leftside">
+      <div class="field">
+        <%= f.label :latin_name %>
+        <%= f.text_field :latin_name %>
+      </div>
+      <div class="field">
+        <%= f.label :fertilizer %>
+        <%= f.text_field :fertilizer %>
+      </div>
+      <div class="field">
+        CO2: &nbsp; 
+				<%= f.check_box :co2_no %>&nbsp; No
+				<%= f.check_box :co2_diy %>&nbsp; DIY
+				<%= f.check_box :co2_pressurized %>&nbsp; Pressurized
+      </div>
+		</div>
+		<div class="rightside"> 
+      <div class="field">
+        <%= f.label :common_name %>
+        <%= f.text_field :common_name, :size => 45 %>
+      </div>
+      <div class="field">
+        <%= f.label :planting_method %>
+        <%= f.text_field :planting_method, :size => 45 %>
+      </div>
+      <div class="field">
+        <%= f.label :substrate %>
+        <%= f.text_field :substrate, :size => 45 %>
+      </div>
+    </div>
+  </fieldset>
+	<br />
+	<fieldset>
+		<legend>Lighting</legend>
+		<div class="leftside">
+			<div class='field'>
+				<%= f.check_box :flourescent %>
+				<%= f.label :flourescent%>
+			</div>
+			<div class="field">
+				<%= f.label :halide %>
+				<%= f.check_box :halide %>
+			</div>
+			<div class="field">
+				<%= f.label :other %>
+				<%= f.check_box :other %>
+				<%= f.text_field :other_comment %>
+			</div>
+			<div class="field">
+				<%= f.label :duration_on %>
+				<%= f.text_field :duration_on %>
+			</div>
+		</div>
+		<div class="rightside">
+			<div class='field'>
+				<%= f.check_box :incandescent %>
+				<%= f.label :incandescent%>
+			</div>
+			<div class="field">
+				<%= f.label :natural %>
+				<%= f.check_box :natural %>
+			</div>
+			<div class="field">
+				<%= f.label :wattage %>
+				<%= f.text_field :wattage %>
+			</div>
+		</div>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend>Tank Info</legend>
+		<div class="leftside">
+			<div class='field'>
+				Dimension(inches)
+				<%= f.text_field :tank_length, :size => 4 %>&nbsp;L &nbsp;
+				<%= f.text_field :tank_width, :size => 4 %>&nbsp;W &nbsp; 
+				<%= f.text_field :tank_height, :size => 4 %>&nbsp;H &nbsp; 
+			</div>
+			<div class="field">
+				<%= f.label :temperature, "Temp.(Deg C)" %>
+				<%= f.text_field :temperature, :size => 4 %>
+			</div>
+			<div class="field">
+				<%= f.label :ph %>
+				<%= f.text_field :ph, :size => 4 %>
+			</div>
+			<div class="field">
+				Water Changes Per Month
+				#<%= f.text_field :num_water_changes, :size => 4 %>&nbsp;
+				per month &nbsp;
+				<%= f.text_field :percent_water_change, :size => 4 %>&nbsp;%
+			</div>
+		</div>
+		<div class="rightside">
+			<div class="field">
+				<%= f.label :gh %>
+				<%= f.text_field :gh, :size => 4 %>
+			</div>
+			<div class="field">
+				<%= f.label :kh %>
+				<%= f.text_field :kh, :size => 4 %>
+			</div>
+			<div class="field">
+				<%= f.label :fish_type_present %>
+				<%= f.text_field :fish_type_present %>
+			</div>
+		</div>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend>Comments</legend>
+		<div class="field">
+			<%= f.text_area :comment, :size => "80x15" %>
+		</div>
+	</fieldset>
+	<br />
   <div class="actions">
     <%= f.submit %>
   </div>

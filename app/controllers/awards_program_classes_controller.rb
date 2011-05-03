@@ -2,7 +2,7 @@ class AwardsProgramClassesController < ApplicationController
   # GET /awards_program_classes
   # GET /awards_program_classes.xml
   def index
-    @awards_program_classes = AwardsProgramClass.all
+    @awards_program_classes = AwardsProgramClass.order("awards_program_id, points asc")
 
     respond_to do |format|
       format.html # index.html.erb

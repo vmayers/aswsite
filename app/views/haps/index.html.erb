@@ -1,21 +1,26 @@
-<h1>Listing haps</h1>
+<%= link_to 'New Hap', new_hap_path %><br /><br />
+<fieldset>
+  <legend>Listing HAPs</legend>
+  
+  <table>
+    <tr>
+      <th>Report Date</th>
+      <th>Latin Name</th>
+      <th>Common Name</th>
+      <th></th>
+    </tr>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @haps.each do |hap| %>
-  <tr>
-    <td><%= link_to 'Show', hap %></td>
-    <td><%= link_to 'Edit', edit_hap_path(hap) %></td>
-    <td><%= link_to 'Destroy', hap, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @haps.each do |hap| %>
+    <tr>
+      <td><%= hap.report_date %></td>
+      <td><%= hap.latin_name %></td>
+      <td><%= hap.common_name %></td>
+      <td><%= link_to 'Show', hap %>&nbsp; <% if !hap.submitted %>|<%= link_to 'Edit', edit_hap_path(hap) %>&nbsp;|<%= link_to 'Destroy', hap, :confirm => 'Are you sure?', :method => :delete %> <% end %></td>
+    </tr>
+  <% end %>
+  </table>
+</fieldset>
 
 <br />
 
-<%= link_to 'New Hap', new_hap_path %>
+

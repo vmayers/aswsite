@@ -18,7 +18,20 @@ a:visited { color: white; }
 a:hover { color: #fff; background-color: white; }
 
 div.field, div.actions {
+  margin-bottom: 5px;
+}
+
+div.label_checkbox_pair {
   margin-bottom: 10px;
+	clear: both;
+	float: none;
+}
+
+div.label_checkbox_pair input {
+  margin-bottom: 10px;
+	margin-left: 80px;
+	clear: left;
+	float: left;
 }
 
 #notice {

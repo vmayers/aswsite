@@ -12,7 +12,7 @@
       <%= raw(n.message) %><br />
       <br />
       Created by:
-      <% if n.user && n.user.member %>
+      <% if n.user && n.user.member && n.user.member.executive_member %>
          <%= n.user.member.executive_member.executive_position.position_name %>
       <% else %>
         Administration

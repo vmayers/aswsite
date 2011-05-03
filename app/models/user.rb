@@ -4,11 +4,13 @@ class User < ActiveRecord::Base
   belongs_to(:member)
   has_many(:notification)
   
-  validates :login_name, :presence => true, :uniqueness => true
-  validates :member_id, :uniqueness => true
+  validates :login_name, :presence => true
+  validates :encrypted_login_name, :uniqueness => true
+  validates :member_id, :uniqueness => true, :if => "member_id != nil"
 
+  attr_encrypted :login_name, :key => '#422BBBWS8998!!$%sdfSSDFF2893', :encode => true
   
-  attr_accessor :password_confirmation, :password
+  attr_accessor :name, :password_confirmation, :password
   
   validates_confirmation_of :password
   validate :password_non_blank
@@ -26,7 +28,9 @@ class User < ActiveRecord::Base
     end
 
     def self.authenticate(login_name, password)
-      user = self.where(["login_name = ?", login_name]).first
+      user = self.new 
+      user.login_name = login_name
+      user = self.where(["encrypted_login_name = ?", user.encrypted_login_name]).first
       if user
         expected_password = encrypted_password(password, user.salt)
         if user.hashed_password != expected_password

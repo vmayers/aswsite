@@ -5,7 +5,7 @@
     <%= f.label :member_id %><%= mark_required(@user, :member_id) %><br />
     <%= 
       @members = Member.order("name")
-      f.collection_select(:member_id, @members, :id, :name)
+      f.collection_select(:member_id, @members, :id, :name, :include_blank => true)
     %>
   </div>
   <div class="field">

@@ -9,7 +9,7 @@
     </tr>
 
   <% for user in @users %>
-    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>"
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
       <td class="item-description"><%= user.member.name %></td>
       <td class="item-actions">
         <%= link_to 'Show', user %> |

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110130004859) do
+ActiveRecord::Schema.define(:version => 20110501192913) do
 
   create_table "awards_program_categories", :force => true do |t|
     t.integer  "awards_program_class_id", :null => false
@@ -113,8 +113,40 @@ ActiveRecord::Schema.define(:version => 20110130004859) do
   end
 
   create_table "haps", :force => true do |t|
+    t.date     "report_date"
+    t.integer  "awards_program_class_id"
+    t.string   "latin_name"
+    t.string   "common_name"
+    t.string   "fertilizer"
+    t.string   "planting_method"
+    t.boolean  "co2_no"
+    t.boolean  "co2_diy"
+    t.boolean  "co2_pressurized"
+    t.string   "substrate"
+    t.boolean  "flourescent"
+    t.boolean  "halide"
+    t.boolean  "incandescent"
+    t.boolean  "natural"
+    t.boolean  "other"
+    t.string   "other_comment"
+    t.decimal  "duration_on",             :precision => 10, :scale => 0
+    t.decimal  "wattage",                 :precision => 10, :scale => 0
+    t.integer  "tank_length"
+    t.integer  "tank_width"
+    t.integer  "tank_height"
+    t.decimal  "temperature",             :precision => 10, :scale => 0
+    t.decimal  "ph",                      :precision => 10, :scale => 0
+    t.decimal  "gh",                      :precision => 10, :scale => 0
+    t.decimal  "kh",                      :precision => 10, :scale => 0
+    t.integer  "num_water_changes"
+    t.integer  "percent_water_change"
+    t.string   "fish_type_present"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "submitted"
+    t.string   "verified_by"
+    t.date     "verified_date"
   end
 
   create_table "librarybooks", :force => true do |t|
@@ -168,13 +200,13 @@ ActiveRecord::Schema.define(:version => 20110130004859) do
   end
 
   create_table "members", :force => true do |t|
-    t.string   "name",         :null => false
-    t.string   "address"
-    t.string   "city"
+    t.string   "name_crypted",    :null => false
+    t.string   "address_crypted"
+    t.string   "city_crypted"
     t.integer  "province_id"
-    t.string   "phone_number"
-    t.string   "postal_code"
-    t.string   "email"
+    t.string   "phone_crypted"
+    t.string   "postal_crypted"
+    t.string   "email_crypted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -222,10 +254,10 @@ ActiveRecord::Schema.define(:version => 20110130004859) do
 
   create_table "users", :force => true do |t|
     t.integer  "member_id"
-    t.string   "login_name",                         :null => false
-    t.string   "hashed_password",                    :null => false
-    t.string   "salt",                               :null => false
-    t.boolean  "administrator",   :default => false, :null => false
+    t.string   "encrypted_login_name",                    :null => false
+    t.string   "hashed_password",                         :null => false
+    t.string   "salt",                                    :null => false
+    t.boolean  "administrator",        :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
