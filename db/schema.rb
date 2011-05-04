@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110501192913) do
+ActiveRecord::Schema.define(:version => 20110504000243) do
 
   create_table "awards_program_categories", :force => true do |t|
     t.integer  "awards_program_class_id", :null => false
@@ -200,12 +200,12 @@ ActiveRecord::Schema.define(:version => 20110501192913) do
   end
 
   create_table "members", :force => true do |t|
-    t.string   "name_crypted",    :null => false
+    t.string   "name",                 :null => false
     t.string   "address_crypted"
     t.string   "city_crypted"
     t.integer  "province_id"
-    t.string   "phone_crypted"
-    t.string   "postal_crypted"
+    t.string   "phone_number_crypted"
+    t.string   "postal_code_crypted"
     t.string   "email_crypted"
     t.datetime "created_at"
     t.datetime "updated_at"
