@@ -66,6 +66,7 @@
 
 .asw-form legend {
     color: #dfd;
+		font-size: 16px;
     background: black;
     font-family: sans-serif;
     padding: 0.2em 1em;
@@ -140,12 +141,40 @@
 
 .asw-form .list-line-odd{
     background: white;
+		
 }
 
 .asw-form .list-line-even{
     background: silver;
 }
 
+.asw-form .species-list table{
+	width: 75%;
+	border: solid 1px;
+	background: white;
+}
+
+.asw-form .species-list table tr td{
+	
+	
+}
+
+#class-heading{
+	font-size: 18px;
+	//background: #004080;
+	background: black;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+
+#categroy-heading{
+	font-size: 16px;
+	background: gray;
+	//background: black;
+	color: white;
+	text-decoration: none;
+}
 //.asw-form ul {
 //  display: none;
 //}
@@ -219,3 +248,4 @@
 #print_display_only{
 	display :none; 
 }
+

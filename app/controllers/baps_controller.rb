@@ -2,7 +2,7 @@ class BapsController < ApplicationController
   # GET /baps
   # GET /baps.xml
   
-  before_filter :authorize, :except => [:overview, :offline_form]
+  before_filter :authorize, :except => [:overview, :offline_form, :species_list]
   
   def index
     @baps = Bap.where("member_id = ?", User.find(session[:user_id]).member_id)
@@ -89,6 +89,11 @@ class BapsController < ApplicationController
   end
   
   def offline_form
+  end
+  
+  def species_list
+    @awards_program_classes = AwardsProgramClass.all_bap_classes
+    
   end
   
   def verify

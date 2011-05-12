@@ -12,6 +12,7 @@ Aswsite::Application.routes.draw do
       post :offline_form
       get :verify
       post :verify
+      get :species_list
     end
   end
 

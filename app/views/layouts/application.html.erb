@@ -75,7 +75,7 @@
           <h3 class="menuheader expandable">BAP</h3>
           <ul class="categoryitems">
             <li><%= link_to "Overview", overview_baps_path %></li>
-            <li>Species List</li>
+            <li><%= link_to "Species List", species_list_baps_path %></li>
             <li>Form</li>
             <% if session[:user] && session[:user].member %>
               <li><%= link_to "My Baps", baps_path %></li>
@@ -99,7 +99,7 @@
             <% if session[:user].administrator %>
               <h3 class="menuheader expandable">Administration</h3>
               <ul class="categoryitems">
-                <li <a href="#" class="subexpandable">Award Programs</a>
+                <li> <a href="#" class="subexpandable">Award Programs</a>
                   <ul class="subcategoryitems", style="margin-left: 15px" >
                     <li><%= link_to "Verify Baps", verify_baps_path %></li>
                     <li>Verify Hap</li>

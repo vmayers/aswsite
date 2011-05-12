@@ -1,0 +1,37 @@
+<fieldset>
+	<legend>ASW BAP Classification and Points Allocation</legend>
+	<div class='species-list'>
+	  	<table>
+
+		  <% @awards_program_classes.each do |awards_program_class| %>
+		    <tr>
+					<th id='class-heading' colspan="2"><%= awards_program_class.classification %></th>
+				</tr>
+				<% awards_program_class.awards_program_category.each do |awards_program_category| %>
+					<tr>
+						<th id='categroy-heading' colspan="2"><%= awards_program_category.name %></th>
+					</tr>
+					<% count = 1 %>
+					<% awards_program_category.awards_program_species.each do |awards_program_species| %>
+						<% if awards_program_category.awards_program_species.count == 1 %>
+							<tr>
+								<td><%= awards_program_species.name %></td>
+							</tr>
+						<% else %>
+				
+							<% if count%2 == 1 %>
+								<tr>
+									<td><%= awards_program_species.name %></td>
+					
+							<% else %>
+									<td><%= awards_program_species.name %></td>
+								</tr>
+							<% end %>
+						<% end %>
+						<% count += 1%>
+					<%end%>
+				<% end %>
+		  <% end %>
+		  </table>
+		</div>
+</fieldset>

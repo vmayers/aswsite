@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110504000243) do
+ActiveRecord::Schema.define(:version => 20110510011759) do
 
   create_table "awards_program_categories", :force => true do |t|
     t.integer  "awards_program_class_id", :null => false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20110504000243) do
   end
 
   create_table "awards_program_species", :force => true do |t|
-    t.integer  "awards_program_id"
+    t.integer  "awards_program_class_id"
     t.integer  "awards_program_category_id"
     t.string   "name",                       :null => false
     t.datetime "created_at"
