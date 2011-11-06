@@ -5,7 +5,7 @@
 
 		  <% @awards_program_classes.each do |awards_program_class| %>
 		    <tr>
-					<th id='class-heading' colspan="2"><%= awards_program_class.classification %></th>
+					<th id='class-heading' colspan="2"><%= awards_program_class.classification %> - <%= awards_program_class.points %> Points</th>
 				</tr>
 				<% awards_program_class.awards_program_category.each do |awards_program_category| %>
 					<tr>
@@ -13,7 +13,7 @@
 					</tr>
 					<% count = 1 %>
 					<% awards_program_category.awards_program_species.each do |awards_program_species| %>
-						<% if awards_program_category.awards_program_species.count == 1 %>
+						<% if awards_program_category.awards_program_species.size == 1 %>
 							<tr>
 								<td><%= awards_program_species.name %></td>
 							</tr>
